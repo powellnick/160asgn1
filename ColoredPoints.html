@@ -1,0 +1,86 @@
+<!-- Nicholas Powell -->
+<!-- nipowell@ucsc.edu -->
+
+<!-- Notes to grader: -->
+<!-- Implemented eraser button and button to toggle reference picture for awesomeness -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Change a point color</title>
+    <style>
+      #topRow {
+        display: flex;
+        align-items: flex-start;
+      }
+      #webgl {
+        border: 1px solid black; 
+        margin-right: 20px; 
+      }
+      #referenceImage {
+        width: 400px;
+        height: 400px;
+        display: none; 
+      }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div id="topRow">
+      <canvas id="webgl" width="400" height="400"></canvas>
+      <img
+        id="referenceImage"
+        src="GraphHouse.png"
+        alt="Reference Drawing"
+      />
+    </div>
+
+    <div>
+      <label for="redSlider">Red: </label>
+      <input type="range" id="redSlider" min="0" max="1" step="0.01" value="1.0" />
+      <span id="redValue">1.0</span>
+    </div>
+    <div>
+      <label for="greenSlider">Green: </label>
+      <input type="range" id="greenSlider" min="0" max="1" step="0.01" value="1.0" />
+      <span id="greenValue">1.0</span>
+    </div>
+    <div>
+      <label for="blueSlider">Blue: </label>
+      <input type="range" id="blueSlider" min="0" max="1" step="0.01" value="1.0" />
+      <span id="blueValue">1.0</span>
+    </div>
+    <div>
+      <label for="sizeSlider">Shape/Eraser Size: </label>
+      <input type="range" id="sizeSlider" min="1" max="100" step="1" value="20" />
+      <span id="sizeValue">20</span>
+    </div>
+    <div>
+      <button id="clearCanvas">Clear Canvas</button>
+    </div>
+    <div>
+      <button id="pointMode">Point</button>
+      <button id="triangleMode">Triangle</button>
+      <button id="circleMode">Circle</button>
+      <button id="eraserMode">Eraser</button>
+    </div>
+    <div>
+      <label for="segmentSlider">Segments: </label>
+      <input type="range" id="segmentSlider" min="3" max="100" step="1" value="36" />
+      <span id="segmentValue">36</span>
+    </div>
+    <div>
+      <button id="recreateDrawing">Recreate Drawing</button>
+    </div>
+    <div>
+      <button id="toggleReferenceImage">Show Reference</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="webgl-utils.js"></script>
+    <script src="webgl-debug.js"></script>
+    <script src="cuon-utils.js"></script>
+    <script src="ColoredPoints.js"></script>
+  </body>
+</html>
